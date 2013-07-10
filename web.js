@@ -1,10 +1,11 @@
 var express = require('express');
 
 var fs = require('fs');
-var buffer = new Buffer(10);
+
 
 var outfile = "index.html";
-buffer = fs.readFileSync(outfile);
+var string = fs.readFileSync(outfile);
+var buffer = new Buffer(string, string.length);
 
 var app = express.createServer(express.logger());
 
